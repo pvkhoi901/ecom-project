@@ -1,0 +1,24 @@
+{
+  "name": "sass",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "compile:sass": "node-sass src/scss/style.scss dist/css/style.comp.css",
+    "concat:css": "concat -o dist/css/style.concat.css dist/css/style.comp.css",
+    "compress:css": "node-sass dist/css/style.concat.css dist/css/style.css --output-style compressed",
+    "build:css": "npm-run-all compile:sass concat:css compress:css",
+    "watch:sass": "node-sass src/scss/style.scss dist/css/style.css -w",
+    "serve": "live-server",
+    "start": "npm-run-all --parallel serve watch:sass "
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^10.3.4",
+    "concat": "^1.0.3",
+    "node-sass": "^6.0.1",
+    "npm-run-all": "^4.1.5",
+    "postcss-cli": "^8.3.1"
+  }
+}
